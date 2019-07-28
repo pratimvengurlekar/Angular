@@ -1,3 +1,4 @@
+import { CourseService } from './../course.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
-  constructor() { }
+  constructor(service:CourseService) { 
+    this.courses = service.getCourses();
+
+  }
 
   ngOnInit() {
   }
 
   title = "List of courses";
-  courses = ["course1","course2","course3"];
+  courses = [];
 
   getTitle(){
     return this.title.toUpperCase();
