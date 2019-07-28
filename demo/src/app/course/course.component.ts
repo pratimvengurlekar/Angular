@@ -13,6 +13,7 @@ export class CourseComponent implements OnInit {
   }
 
   title = "List of courses";
+  courses = ["course1","course2","course3"];
 
   getTitle(){
     return this.title.toUpperCase();
